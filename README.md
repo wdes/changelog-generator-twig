@@ -1,10 +1,10 @@
 # An index of the MariaDB and MySQL Knowledge bases
 
-[![Build Status](https://travis-ci.com/wdes/changelog-generator-twig.svg?branch=master)](https://travis-ci.com/wdes/changelog-generator-twig)
-[![codecov](https://codecov.io/gh/wdes/changelog-generator-twig/branch/master/graph/badge.svg)](https://codecov.io/gh/wdes/changelog-generator-twig)
-[![npm version](https://badge.fury.io/js/changelog-generator-twig.svg)](https://badge.fury.io/js/changelog-generator-twig)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/wdes/changelog-generator-twig.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog-generator-twig/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wdes/changelog-generator-twig.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog-generator-twig/context:javascript)
+[![Build Status](https://travis-ci.com/wdes/changelog.svg?branch=master)](https://travis-ci.com/wdes/changelog)
+[![codecov](https://codecov.io/gh/wdes/changelog/branch/master/graph/badge.svg)](https://codecov.io/gh/wdes/changelog)
+[![npm version](https://badge.fury.io/js/changelog.svg)](https://badge.fury.io/js/changelog)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/context:javascript)
 
 
 ## Generate a changelog
