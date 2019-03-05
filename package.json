@@ -1,0 +1,56 @@
+{
+    "name": "changelog-generator-twig",
+    "version": "1.0.0",
+    "description": "A changelog generator using twig templates",
+    "main": "bin/changelog-generator-twig.js",
+    "nyc": {
+        "exclude": [
+            "test",
+            "coverage",
+            ".nyc_output"
+        ],
+        "reporter": [
+            "text",
+            "text-summary"
+        ]
+    },
+    "scripts": {
+        "test": "nyc --all mocha --ui tdd",
+        "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
+        "prettier": "prettier --ignore-path ./.prettierignore --write \"*/**/*.js\" \"*.js\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wdes/changelog.git"
+    },
+    "keywords": [
+        "changelog",
+        "twig",
+        "git",
+        "npm-package"
+    ],
+    "author": {
+        "email": "williamdes@wdes.fr",
+        "name": "William Desportes",
+        "url": "https://william.wdes.fr"
+    },
+    "license": "MPL-2.0",
+    "bugs": {
+        "url": "https://github.com/wdes/changelog/issues"
+    },
+    "homepage": "https://github.com/wdes/changelog#readme",
+    "dependencies": {
+        "snack-cli": "^1.1.0",
+        "twig": "^1.13.2"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "jshint": "^2.10.1",
+        "mocha": "^6.0.2",
+        "nyc": "^13.3.0",
+        "prettier": "^1.16.4"
+    },
+    "bin": {
+        "changelog-generator-twig": "bin/changelog-generator-twig.js"
+    }
+}

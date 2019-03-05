@@ -1,0 +1,90 @@
+# An index of the MariaDB and MySQL Knowledge bases
+
+[![Build Status](https://travis-ci.com/wdes/changelog-generator-twig.svg?branch=master)](https://travis-ci.com/wdes/changelog-generator-twig)
+[![codecov](https://codecov.io/gh/wdes/changelog-generator-twig/branch/master/graph/badge.svg)](https://codecov.io/gh/wdes/changelog-generator-twig)
+[![npm version](https://badge.fury.io/js/changelog-generator-twig.svg)](https://badge.fury.io/js/changelog-generator-twig)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/wdes/changelog-generator-twig.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog-generator-twig/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wdes/changelog-generator-twig.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog-generator-twig/context:javascript)
+
+
+## Generate a changelog
+
+### Commands
+
+#### Help
+
+`
+changelog-generator-twig --help
+`
+
+```
+Usage: changelog-generator-twig [options]
+
+A changelog generator using twig templates
+
+Options:
+      --owner <owner>              The repo owner
+      --repo <repo>                The repo
+      --repoDir <repoDir>          The repo dir
+      --headName <headName>        The head name (default: Unreleased)
+      --baseCommit <commmitHash>   The base commit hash
+      --template <templatePath>    The twig template path (default: /mnt/Dev/@wdes/test/node_modules/changelog-generator-twig/src/CHANGELOG.twig)
+      --version                    display version information and exit
+      --help                       display this help and exit
+
+```
+
+#### Basic example
+
+`
+changelog-generator-twig --owner williamdes --repo mariadb-mysql-kbs --repoDir /mnt/Dev/@williamdes/mariadb-mysql-kbs/ --baseCommit 4282724e1e04d6b27d3c0744e1a37a50be740237
+`
+
+See example here: https://github.com/williamdes/mariadb-mysql-kbs/blob/ef766fd9991e4fd1e80bb7b14abb2a352ecd4689/CHANGELOG.md
+
+#### Use a custom template (twig)
+
+`
+changelog-generator-twig --owner williamdes --repo mariadb-mysql-kbs --repoDir /mnt/Dev/@williamdes/mariadb-mysql-kbs/ --baseCommit 4282724e1e04d6b27d3c0744e1a37a50be740237 --template ./CHANGELOG_template.twig
+`
+
+##### Data passed to twig template
+
+```
+args: [ additional args passed to script ],
+links: [
+    {
+        name: "v1.0.0",
+        start: "185050ec502f20b3280df46485605e99563d1e87",
+        end: "HEAD"
+    },...
+],
+versions: [
+    {
+        name: "v1.0.0",
+        changesAdded: [
+            {
+                hash: "d2c9361",
+                longHash:
+                    "d2c9361467b0e67e4c7a1bbfa092b342363450cc",
+                msg: "Added some files"
+            }
+        ],
+        changesChanged: [],
+        changesDeprecated: [],
+        changesRemoved: [],
+        changesFixed: [],
+        changesSecurity: [],
+        changesImprove: []
+    },...
+],
+owner: "--owner argument",
+repo: "--repo argument"
+```
+
+### Install
+
+```
+npm install --save changelog-generator-twig
+```
+
