@@ -37,10 +37,16 @@ Options:
 #### Basic example
 
 `
+./node_modules/.bin/changelog-generator-twig --owner wdes --repo changelog --repoDir ./ --baseCommit c295e8c3244b857b9d22fdd83a80d2f31cc6139b
+`
+
+Or
+
+`
 changelog-generator-twig --owner williamdes --repo mariadb-mysql-kbs --repoDir /mnt/Dev/@williamdes/mariadb-mysql-kbs/ --baseCommit 4282724e1e04d6b27d3c0744e1a37a50be740237
 `
 
-See example here: https://github.com/williamdes/mariadb-mysql-kbs/blob/ef766fd9991e4fd1e80bb7b14abb2a352ecd4689/CHANGELOG.md
+See changelog example here: https://github.com/williamdes/mariadb-mysql-kbs/blob/ef766fd9991e4fd1e80bb7b14abb2a352ecd4689/CHANGELOG.md
 
 #### Use a custom template (twig)
 
