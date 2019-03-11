@@ -1,4 +1,4 @@
-# An index of the MariaDB and MySQL Knowledge bases
+# An changelog generator that uses twig templates written in node
 
 [![Build Status](https://travis-ci.com/wdes/changelog.svg?branch=master)](https://travis-ci.com/wdes/changelog)
 [![codecov](https://codecov.io/gh/wdes/changelog/branch/master/graph/badge.svg)](https://codecov.io/gh/wdes/changelog)
