@@ -5,6 +5,8 @@
 [![npm version](https://badge.fury.io/js/changelog.svg)](https://badge.fury.io/js/changelog)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/context:javascript)
+[![Known Vulnerabilities](https://snyk.io/test/github/wdes/changelog/badge.svg)](https://snyk.io/test/github/wdes/changelog)
+[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
 
 
 ## Generate a changelog
