@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v1.0.1]
+
 ### Added
 
 - [104341e](https://github.com/wdes/changelog/commit/104341e2e27c41c935635f5eee9a2337233aefc0) added: CHANGELOG.md
@@ -37,6 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
-[Unreleased]: https://github.com/wdes/changelog/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/wdes/changelog/compare/v1.0.1...HEAD
+[v1.0.1]: https://github.com/wdes/changelog/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/wdes/changelog/compare/c295e8c3244b857b9d22fdd83a80d2f31cc6139b...v1.0.0
 
