@@ -41,7 +41,7 @@
     },
     "homepage": "https://github.com/wdes/changelog#readme",
     "dependencies": {
-        "snack-cli": "^1.1.0",
+        "snack-cli": "^2.0.0",
         "twig": "^1.13.2"
     },
     "devDependencies": {
