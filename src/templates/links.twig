@@ -1,0 +1,7 @@
+{% for link in links %}
+{#  #}[{{link.name}}]: https://github.com/{{ owner }}/{{ repo }}/compare/{{link.start}}...{{link.end}}
+{% endfor %}
+{#
+[Unreleased]: https://github.com/{{ owner }}/{{ repo }}/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/{{ owner }}/{{ repo }}/compare/v0.3.0...v1.0.0
+#}
