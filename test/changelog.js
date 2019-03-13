@@ -14,6 +14,7 @@ module.exports = function() {
                     'wdes/changelog',
                     [
                         {
+                            nbrCommits: 1,
                             name: 'v1.0.0',
                             changesAdded: [
                                 {
@@ -50,15 +51,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v1.0.0]
 
 ### Added
+
 - [d2c9361](https://github.com/williamdes/wdes/changelog/commit/d2c9361467b0e67e4c7a1bbfa092b342363450cc) Added blabla blabla
 
 
-
-
-
-
 [v1.0.0]: https://github.com/williamdes/wdes/changelog/compare/185050ec502f20b3280df46485605e99563d1e87...HEAD
-
 `
                     );
                     done();
