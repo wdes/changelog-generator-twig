@@ -1,44 +1,43 @@
-"use strict";
+'use strict';
 
-const expect = require("chai").expect;
-const changelog = require(__dirname + "/../src/changelog");
+const expect = require('chai').expect;
+const changelog = require(__dirname + '/../src/changelog');
 
 module.exports = function() {
-    suite("changelog", function() {
-        test("test changelog render", function(done) {
+    suite('changelog', function() {
+        test('test changelog render', function(done) {
             changelog
                 .render(
                     [],
                     // owner, repo, versions, links
-                    "williamdes",
-                    "wdes/changelog",
+                    'williamdes',
+                    'wdes/changelog',
                     [
                         {
-                            name: "v1.0.0",
+                            name: 'v1.0.0',
                             changesAdded: [
                                 {
-                                    hash: "d2c9361",
-                                    longHash:
-                                        "d2c9361467b0e67e4c7a1bbfa092b342363450cc",
-                                    msg: "Added blabla blabla"
-                                }
+                                    hash: 'd2c9361',
+                                    longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                                    msg: 'Added blabla blabla',
+                                },
                             ],
                             changesChanged: [],
                             changesDeprecated: [],
                             changesRemoved: [],
                             changesFixed: [],
                             changesSecurity: [],
-                            changesImprove: []
-                        }
+                            changesImprove: [],
+                        },
                     ],
                     [
                         {
-                            name: "v1.0.0",
-                            start: "185050ec502f20b3280df46485605e99563d1e87",
-                            end: "HEAD"
-                        }
+                            name: 'v1.0.0',
+                            start: '185050ec502f20b3280df46485605e99563d1e87',
+                            end: 'HEAD',
+                        },
                     ],
-                    __dirname + "/../src/CHANGELOG.twig"
+                    __dirname + '/../src/CHANGELOG.twig'
                 )
                 .then(html => {
                     expect(html).to.equal(

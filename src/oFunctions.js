@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @see www.mikedoesweb.com/2014/javascript-object-next-and-previous-keys/
