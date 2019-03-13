@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- [104341e](https://github.com/wdes/changelog/commit/104341e2e27c41c935635f5eee9a2337233aefc0) added: CHANGELOG.md
 - [be784af](https://github.com/wdes/changelog/commit/be784afa520879a15514fdac72c1e776c11d4755) added: nbrCommits (number of commits)
 - [6190f69](https://github.com/wdes/changelog/commit/6190f69737da63a9061f473263ebe4d404cc6b70) added: changelog command
 - [617def1](https://github.com/wdes/changelog/commit/617def19f4052449c404130a5a51e5bd265e9f2b) added: prettier config
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- [aa31da7](https://github.com/wdes/changelog/commit/aa31da7c86785c0362188f1912f00975d73a9b00) fixed: tests
 - [701cba3](https://github.com/wdes/changelog/commit/701cba3452dfdc1b3fcdd12c79406588d9158f06) fixed: empty blank lines
 - [c490880](https://github.com/wdes/changelog/commit/c490880a019d2a4b3969df4bce808a0287276e07) fixed: README.md
 - [1a47f01](https://github.com/wdes/changelog/commit/1a47f01a11d366dc53d0c99a71416adb5fd0dbda) fixed: .npmignore
