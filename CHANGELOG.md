@@ -5,7 +5,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-
 ## [v1.1.0]
 
 ### Added
@@ -21,12 +20,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- [b32b88e](https://github.com/wdes/changelog/commit/b32b88e2b3f30f0fdc9c854a58b422fe5e20a864) updated: package version to 1.1.0
+- [23fc04f](https://github.com/wdes/changelog/commit/23fc04f4c69be39e338ed307b8339733c3cd3eef) updated: changelog for 1.0.1
+- [eb5ed9e](https://github.com/wdes/changelog/commit/eb5ed9e7d24b6bebc98b80da27ee869c1700d072) updated: changelog
 - [db9ebfa](https://github.com/wdes/changelog/commit/db9ebfa1df6cb7b931bfb30f315fc2d446d1be93) update: jshint
 - [c071427](https://github.com/wdes/changelog/commit/c071427b0c545cee6125d24e42d639543f2474d3) update: snack-cli from 1.1.0 to 2.0.0
 - [a877e2f](https://github.com/wdes/changelog/commit/a877e2f3edbbfcce19380afde1dbe817e56c5f63) updated: package-lock.json
 
 ### Fixed
 
+- [9f7c555](https://github.com/wdes/changelog/commit/9f7c555a02a971ed2d28bbc57b9ea4698923ed4c) fixed: changelog
 - [aa31da7](https://github.com/wdes/changelog/commit/aa31da7c86785c0362188f1912f00975d73a9b00) fixed: tests
 - [701cba3](https://github.com/wdes/changelog/commit/701cba3452dfdc1b3fcdd12c79406588d9158f06) fixed: empty blank lines
 - [c490880](https://github.com/wdes/changelog/commit/c490880a019d2a4b3969df4bce808a0287276e07) fixed: README.md
@@ -39,7 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
-[Unreleased]: https://github.com/wdes/changelog/compare/v1.0.1...HEAD
-[v1.0.1]: https://github.com/wdes/changelog/compare/v1.0.0...v1.0.1
+[Unreleased]: https://github.com/wdes/changelog/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/wdes/changelog/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/wdes/changelog/compare/c295e8c3244b857b9d22fdd83a80d2f31cc6139b...v1.0.0
 
