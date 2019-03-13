@@ -15,6 +15,8 @@
         ]
     },
     "scripts": {
+        "changelog": "./bin/changelog-generator-twig.js --owner wdes --repo changelog --repoDir ./ --baseCommit c295e8c3244b857b9d22fdd83a80d2f31cc6139b",
+        "changelog-file": "npm run --silent changelog > CHANGELOG.md",
         "jshint": "jshint ./",
         "test": "nyc --all mocha --ui tdd",
         "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
