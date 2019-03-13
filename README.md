@@ -69,6 +69,7 @@ links: [
 ],
 versions: [
     {
+        nbrCommits: <numberOfCommits>,
         name: "v1.0.0",
         changesAdded: [
             {

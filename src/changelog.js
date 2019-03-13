@@ -95,6 +95,14 @@ module.exports = {
                             });
                         }
                         versions.push({
+                            nbrCommits:
+                                changesAdded.length +
+                                changesChanged.length +
+                                changesDeprecated.length +
+                                changesRemoved.length +
+                                changesFixed.length +
+                                changesSecurity.length +
+                                changesImprove.length,
                             name: version.replace('HEAD', headName),
                             changesAdded: changesAdded,
                             changesChanged: changesChanged,
