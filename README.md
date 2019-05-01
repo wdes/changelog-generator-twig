@@ -6,7 +6,7 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/context:javascript)
 [![Known Vulnerabilities](https://snyk.io/test/github/wdes/changelog/badge.svg)](https://snyk.io/test/github/wdes/changelog)
-[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
+[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/wdes/changelog.svg)](https://greenkeeper.io/)
 
 
 ## Generate a changelog
