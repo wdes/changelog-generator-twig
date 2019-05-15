@@ -45,14 +45,14 @@
     "dependencies": {
         "simple-git": "^1.113.0",
         "snack-cli": "^2.0.0",
-        "twig": "^1.13.2"
+        "twig": "^1.13.3"
     },
     "devDependencies": {
         "chai": "^4.2.0",
         "jshint": "^2.10.2",
-        "mocha": "^6.0.2",
-        "nyc": "^14.0.0",
-        "prettier": "^1.16.4"
+        "mocha": "^6.1.4",
+        "nyc": "^14.1.1",
+        "prettier": "^1.17.1"
     },
     "prettier": {
         "singleQuote": true,
