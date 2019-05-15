@@ -1,6 +1,6 @@
 {
     "name": "changelog-generator-twig",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "A changelog generator using twig templates",
     "main": "bin/changelog-generator-twig.js",
     "nyc": {
