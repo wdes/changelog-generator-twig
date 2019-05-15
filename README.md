@@ -1,4 +1,4 @@
-# An changelog generator that uses twig templates written in node
+# A NodeJS changelog generator that uses twig templates
 
 [![Build Status](https://travis-ci.com/wdes/changelog.svg?branch=master)](https://travis-ci.com/wdes/changelog)
 [![codecov](https://codecov.io/gh/wdes/changelog/branch/master/graph/badge.svg)](https://codecov.io/gh/wdes/changelog)
@@ -12,6 +12,16 @@
 ## Generate a changelog
 
 ### Commands
+
+### Install
+
+```
+npm install --save changelog-generator-twig
+```
+
+### Additional infos
+
+You can use `[changelog skip]` (non case sensitive) in the commit message and the commit will not be part of the changelog
 
 #### Help
 
@@ -90,13 +100,3 @@ versions: [
 owner: "--owner argument",
 repo: "--repo argument"
 ```
-
-### Install
-
-```
-npm install --save changelog-generator-twig
-```
-
-### Additional infos
-
-You can use `[changelog skip]` (non case sensitive) in the commit message and the commit will not be part of the changelog
