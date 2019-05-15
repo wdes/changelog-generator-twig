@@ -8,35 +8,22 @@ const oFunctions = require(__dirname + '/oFunctions');
 module.exports = {
     getVersions: (headName, baseCommitHash, repoDir) => {
         return new Promise((resolve, reject) => {
-            var changelog = {};
-            /**
-             * get log info with mapped properties to log format
-             * @see git-scm.com/docs/git-log#_pretty_formats
-             */
-            git.log(
-                repoDir,
-                {
-                    tag: '%d',
-                    note: '%N',
-                    msg: '%s',
-                    hash: '%h',
-                    longHash: '%H',
-                    author: '%ae',
-                    signature: '%G?',
-                    time: '%at',
-                },
-
-                // replace \r\n etc from value
-                (key, value) => value.replace(/\s\s/g, '')
-            )
+            var changelog = {
+                HEAD: [],
+            };
+            git.log(repoDir)
                 .then(records => {
-                    let tag = (changelog.HEAD = []);
+                    var lastTagName = 'HEAD';
                     records.forEach(record => {
-                        const tagName = git.isTagName(record.tag);
-                        if (tagName) {
-                            tag = changelog[tagName] = [];
+                        let lastTag = git.getLastTag(record.tag);
+                        if (lastTag !== null) {
+                            lastTagName = lastTag;
+                            changelog[lastTagName] = [];
                         }
-                        tag.push(record);
+
+                        if (record.body.match(/\[changelog skip\]/i) === null) {
+                            changelog[lastTagName].push(record);
+                        }
                     });
                     var links = [];
                     var versions = [];

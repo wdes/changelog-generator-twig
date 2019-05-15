@@ -97,3 +97,6 @@ repo: "--repo argument"
 npm install --save changelog-generator-twig
 ```
 
+### Additional infos
+
+You can use `[changelog skip]` (non case sensitive) in the commit message and the commit will not be part of the changelog

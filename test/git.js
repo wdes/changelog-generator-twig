@@ -5,26 +5,26 @@ const git = require(__dirname + '/../src/git');
 
 module.exports = function() {
     suite('git', function() {
-        test('is tag name', function(done) {
-            expect(git.isTagName('tag:v1.0.0')).to.equal('v1.0.0');
+        test('get last tag (dataset-1)', function(done) {
+            expect(git.getLastTag('tag: v1.0.0')).to.equal('v1.0.0');
+            done();
+        });
+        test('get last tag (dataset-2)', function(done) {
+            expect(git.getLastTag('tag: v1.0.0, tag: RELEASE_2_0_0')).to.equal('v1.0.0');
+            done();
+        });
+        test('get last tag (dataset-3)', function(done) {
+            expect(git.getLastTag('tag: RELEASE_3_0_0, tag: RELEASE_2_0_0')).to.equal('RELEASE_3_0_0');
+            done();
+        });
+        test('get last tag (dataset-4)', function(done) {
+            expect(git.getLastTag('tag: RELEASES/RELEASE_3_0_0, tag: RELEASE_2_0_0')).to.equal(
+                'RELEASES/RELEASE_3_0_0'
+            );
             done();
         });
         test('changelog', function(done) {
-            git.log(
-                __dirname,
-                {
-                    tag: '%d',
-                    note: '%N',
-                    msg: '%s',
-                    hash: '%h',
-                    longHash: '%H',
-                    author: '%ae',
-                    signature: '%G?',
-                    time: '%at',
-                },
-                // replace \r\n etc from value
-                (key, value) => value.replace(/\s\s/g, '')
-            )
+            git.log(__dirname)
                 .then(records => {
                     expect(records[0]).to.have.property('author'); //williamdes@wdes.fr
                     expect(records[0]).to.have.property('hash'); //3cb4dd9
