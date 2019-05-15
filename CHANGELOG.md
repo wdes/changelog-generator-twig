@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- [93fc814](https://github.com/wdes/changelog/commit/93fc81482365d126eb16c361220fe8e09c60acf0) updated: nyc from ^13.3.0 to ^14.0.0 (#2)
+- [e9bfe6d](https://github.com/wdes/changelog/commit/e9bfe6d9dc5e706e860a061423ea881b9404325d) updated: changelog
+
+### Removed
+
+- [36f2054](https://github.com/wdes/changelog/commit/36f20542ec2ee61680e5a619cdc3c692eb3f81c4) removed: package-lock.json
+
 ## [v1.1.0]
 
 ### Added
