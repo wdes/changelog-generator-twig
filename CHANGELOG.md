@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- [d787600](https://github.com/wdes/changelog/commit/d7876006bd5bb95cbcd01387b0b073e3321a3e1f) updated: CHANGELOG.md
+
 ## [v1.2.0]
 
 ### Changed
