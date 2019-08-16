@@ -40,14 +40,14 @@
     },
     "homepage": "https://github.com/wdes/changelog#readme",
     "dependencies": {
-        "simple-git": "^1.120.0",
+        "simple-git": "^1.124.0",
         "snack-cli": "^2.0.0",
         "twig": "^1.13.3"
     },
     "devDependencies": {
         "chai": "^4.2.0",
         "jshint": "^2.10.2",
-        "mocha": "^6.1.4",
+        "mocha": "^6.2.0",
         "nyc": "^14.1.1",
         "prettier": "^1.18.2"
     },
