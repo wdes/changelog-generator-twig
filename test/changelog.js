@@ -182,5 +182,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(convention.getDefaultChangesBlock('allchanges')[0]).to.deep.equal(changesBlockToFind);
             done();
         });
+        test('test unknown convention', function(done) {
+            const items = convention.getDefaultChangesBlock('unknown');
+            expect(items).to.deep.equal([]);
+            done();
+        });
     });
 };
