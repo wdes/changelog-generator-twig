@@ -8,13 +8,9 @@
 {# Line break ! #}
 {% if version.nbrCommits > 0 %}
 {# Line break ! #}
-{% include 'commits_block.twig' with { commits: version.changesAdded, name: "Added", owner: owner, repo: repo } only %}
-{% include 'commits_block.twig' with { commits: version.changesChanged, name: "Changed", owner: owner, repo: repo  } only %}
-{% include 'commits_block.twig' with { commits: version.changesDeprecated, name: "Deprecated", owner: owner, repo: repo } only %}
-{% include 'commits_block.twig' with { commits: version.changesRemoved, name: "Removed", owner: owner, repo: repo  } only %}
-{% include 'commits_block.twig' with { commits: version.changesFixed, name: "Fixed", owner: owner, repo: repo  } only %}
-{% include 'commits_block.twig' with { commits: version.changesSecurity, name: "Security", owner: owner, repo: repo  } only %}
-{% include 'commits_block.twig' with { commits: version.changesImprove, name: "Improvements", owner: owner, repo: repo  } only %}
+{% for changes in version.changes %}
+{% include 'commits_block.twig' with { commits: changes.commits, name: changes.name, owner: owner, repo: repo } only %}
+{% endfor %}
 {% endif %}
 {% endfor %}
 {#

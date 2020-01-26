@@ -16,19 +16,19 @@ module.exports = function() {
                         {
                             nbrCommits: 1,
                             name: 'v1.0.0',
-                            changesAdded: [
+                            changes: [
                                 {
-                                    hash: 'd2c9361',
-                                    longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
-                                    msg: 'Added blabla blabla',
+                                    name: 'Added',
+                                    messageRegex: [/^added:\s/i, /^add:/i, /^test:/i],
+                                    commits: [
+                                        {
+                                            hash: 'd2c9361',
+                                            longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                                            msg: 'Added blabla blabla',
+                                        },
+                                    ],
                                 },
                             ],
-                            changesChanged: [],
-                            changesDeprecated: [],
-                            changesRemoved: [],
-                            changesFixed: [],
-                            changesSecurity: [],
-                            changesImprove: [],
                         },
                     ],
                     [
@@ -66,7 +66,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             const count = changelog.countCommitsInChanges([
                 {
                     name: 'Changes',
-                    messageRegex: [/^added:\s/gi, /^add:/gi, /^test:/gi],
+                    messageRegex: [/^added:\s/i, /^add:/i, /^test:/i],
                     commits: [
                         {
                             hash: 'd2c9361',
@@ -77,6 +77,72 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
                 },
             ]);
             expect(count).to.equal(1);
+            done();
+        });
+        test('test find changes block for a message dataset-1', function(done) {
+            const changesBlockToFind = {
+                name: 'Added',
+                messageRegex: [/^added:/i, /^add:/i, /^test:/i],
+                commits: [],
+            };
+            const goodBlock = changelog.findChangesBlockForMessage([changesBlockToFind], 'added: test a cool feature');
+            expect(goodBlock).to.equal(changesBlockToFind);
+            done();
+        });
+        test('test find changes block for a message dataset-2', function(done) {
+            const changesBlocks = changelog.getDefaultChangesBlock();
+            const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'fixed: .npmignore');
+            expect(goodBlock).to.equal(changesBlocks[4]);
+            done();
+        });
+        test('test find changes block for a message dataset-3', function(done) {
+            const changesBlocks = changelog.getDefaultChangesBlock();
+            changesBlocks[1].commits.push({
+                msg: 'updated: package version to 1.1.0',
+                hash: 'b32b88e',
+                longHash: 'b32b88e2b3f30f0fdc9c854a58b422fe5e20a864',
+            });
+            const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'updated: changelog for 1.0.1');
+            expect(goodBlock).to.equal(changesBlocks[1]);
+            done();
+        });
+        test('test find changes block for a message dataset-4', function(done) {
+            const changesBlocks = changelog.getDefaultChangesBlock();
+            const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'added: prettier config');
+            expect(goodBlock).to.equal(changesBlocks[0]);
+            done();
+        });
+        test('test find changes block for a message dataset-5', function(done) {
+            const changesBlocks = changelog.getDefaultChangesBlock();
+            changesBlocks[4].commits.push(        {
+                msg: 'fixed: changelog',
+                hash: '9f7c555',
+                longHash: '9f7c555a02a971ed2d28bbc57b9ea4698923ed4c'
+              },
+              {
+                msg: 'fixed: tests',
+                hash: 'aa31da7',
+                longHash: 'aa31da7c86785c0362188f1912f00975d73a9b00'
+              });
+            const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'fixed: .npmignore');
+            expect(goodBlock).to.equal(changesBlocks[4]);
+            done();
+        });
+        test('test get default changes block', function(done) {
+            const changesBlockToFind = {
+                name: 'Added',
+                messageRegex: [/^added:/i, /^add:/i, /^test:/i],
+                commits: [],
+            };
+            const items = changelog.getDefaultChangesBlock();
+            expect(items[0]).to.deep.equal(changesBlockToFind);
+            items[0].commits.push({
+                hash: 'd2c9361',
+                longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                msg: 'Added blabla blabla',
+            });
+            // This tests that the object is not passed by reference
+            expect(changelog.getDefaultChangesBlock()[0]).to.deep.equal(changesBlockToFind);
             done();
         });
     });

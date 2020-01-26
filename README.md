@@ -82,20 +82,17 @@ versions: [
     {
         nbrCommits: <numberOfCommits>,
         name: "v1.0.0",
-        changesAdded: [
-            {
-                hash: "d2c9361",
-                longHash:
-                    "d2c9361467b0e67e4c7a1bbfa092b342363450cc",
-                msg: "Added some files"
-            }
-        ],
-        changesChanged: [],
-        changesDeprecated: [],
-        changesRemoved: [],
-        changesFixed: [],
-        changesSecurity: [],
-        changesImprove: []
+        changes: [{
+            name: 'Added',
+            messageRegex: [/^added:\s/gi, /^add:/gi, /^test:/gi],
+            commits: [
+                {
+                    hash: 'd2c9361',
+                    longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                    msg: 'Added some files',
+                },
+            ],
+        },...]
     },...
 ],
 owner: "--owner argument",

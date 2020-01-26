@@ -10,8 +10,56 @@ const countCommitsInChanges = function(changes) {
     return changes.map(item => item.commits.length).reduce((accumulator, currentVal) => accumulator + currentVal);
 };
 
+const findChangesBlockForMessage = function(changes, msg) {
+    return changes.find(change => {
+        return change.messageRegex.some(rx => rx.test(msg));
+    });
+};
+
+const getDefaultChangesBlock = function() {
+    return [
+        {
+            commits: [],
+            name: 'Added',
+            messageRegex: [/^added:/i, /^add:/i, /^test:/i],
+        },
+        {
+            commits: [],
+            name: 'Changed',
+            messageRegex: [/^changed:/i, /^update:/i, /^updated:/i, /^moved:/i],
+        },
+        {
+            commits: [],
+            name: 'Deprecated',
+            messageRegex: [/^deprecated:/i],
+        },
+        {
+            commits: [],
+            name: 'Removed',
+            messageRegex: [/^removed:/i, /^remove:/i],
+        },
+        {
+            commits: [],
+            name: 'Fixed',
+            messageRegex: [/^fixed:/i, /^fix:/i, /^fixes:/i],
+        },
+        {
+            commits: [],
+            name: 'Security',
+            messageRegex: [/^security:/i],
+        },
+        {
+            commits: [],
+            name: 'Improvements',
+            messageRegex: [/^improve:/i, /^improved:/i, /^style:/i],
+        },
+    ];
+};
+
 module.exports = {
     countCommitsInChanges: countCommitsInChanges,
+    findChangesBlockForMessage: findChangesBlockForMessage,
+    getDefaultChangesBlock: getDefaultChangesBlock,
     getVersions: (headName, baseCommitHash, repoDir) => {
         return new Promise((resolve, reject) => {
             var changelog = {
@@ -21,6 +69,7 @@ module.exports = {
                 reject('Directory ' + repoDir + ' does not exist!');
                 return;
             }
+
             git.log(repoDir)
                 .then(records => {
                     var lastTagName = 'HEAD';
@@ -31,83 +80,37 @@ module.exports = {
                             changelog[lastTagName] = [];
                         }
 
-                        if (record.body.match(/\[changelog skip\]/i) === null) {
+                        if (record.body.includes('[changelog skip]') === false) {
                             changelog[lastTagName].push(record);
                         }
                     });
                     var links = [];
                     var versions = [];
                     for (var version in changelog) {
-                        const changesAdded = [];
-                        const changesChanged = [];
-                        const changesDeprecated = [];
-                        const changesRemoved = [];
-                        const changesFixed = [];
-                        const changesSecurity = [];
-                        const changesImprove = [];
+                        let changes = getDefaultChangesBlock();
                         links.push({
                             name: version.trim().replace('HEAD', headName),
                             start: oFunctions.keys.next(changelog, version) || baseCommitHash,
                             end: version,
                         });
                         for (var commitid in changelog[version]) {
-                            let changes = [];
                             let commit = changelog[version][commitid];
                             commit.time = parseInt(commit.time);
                             let msg = commit.msg.trim();
-                            /*
-                                if (msg.match(/^v([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/gi)) {
-                                    continue;
-                                }
-                            */
-                            if (msg.match(/^added:\s/gi) || msg.match(/^add:/gi) || msg.match(/^test:/gi)) {
-                                changes = changesAdded;
-                            } else if (
-                                msg.match(/^changed:/gi) ||
-                                msg.match(/^update:/gi) ||
-                                msg.match(/^updated:/gi) ||
-                                msg.match(/^moved:/gi)
-                            ) {
-                                changes = changesChanged;
-                            } else if (msg.match(/^deprecated:/gi)) {
-                                changes = changesDeprecated;
-                            } else if (msg.match(/^removed:/gi) || msg.match(/^remove:/gi)) {
-                                changes = changesRemoved;
-                            } else if (msg.match(/^fixed:/gi) || msg.match(/fix:/gi) || msg.match(/fixes:/gi)) {
-                                changes = changesFixed;
-                            } else if (msg.match(/^security:/gi)) {
-                                changes = changesSecurity;
-                            } else if (
-                                msg.match(/^improve:/gi) ||
-                                msg.match(/^improved:/gi) ||
-                                msg.match(/^style:/gi)
-                            ) {
-                                changes = changesImprove;
-                            }
 
-                            changes.push({
-                                msg: msg,
-                                hash: changelog[version][commitid].hash.trim(),
-                                longHash: changelog[version][commitid].longHash.trim(),
-                            });
+                            const block = findChangesBlockForMessage(changes, msg);
+                            if (block && typeof block.commits === 'object') {
+                                block.commits.push({
+                                    msg: msg,
+                                    hash: changelog[version][commitid].hash.trim(),
+                                    longHash: changelog[version][commitid].longHash.trim(),
+                                });
+                            }
                         }
                         versions.push({
-                            nbrCommits:
-                                changesAdded.length +
-                                changesChanged.length +
-                                changesDeprecated.length +
-                                changesRemoved.length +
-                                changesFixed.length +
-                                changesSecurity.length +
-                                changesImprove.length,
+                            nbrCommits: countCommitsInChanges(changes),
                             name: version.replace('HEAD', headName),
-                            changesAdded: changesAdded,
-                            changesChanged: changesChanged,
-                            changesDeprecated: changesDeprecated,
-                            changesRemoved: changesRemoved,
-                            changesFixed: changesFixed,
-                            changesSecurity: changesSecurity,
-                            changesImprove: changesImprove,
+                            changes: changes,
                         });
                     }
                     resolve({
