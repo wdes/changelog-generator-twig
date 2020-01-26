@@ -91,13 +91,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             done();
         });
         test('test find changes block for a message dataset-2', function(done) {
-            const changesBlocks = convention.getDefaultChangesBlock();
+            const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'fixed: .npmignore');
             expect(goodBlock).to.equal(changesBlocks[4]);
             done();
         });
         test('test find changes block for a message dataset-3', function(done) {
-            const changesBlocks = convention.getDefaultChangesBlock();
+            const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             changesBlocks[1].commits.push({
                 msg: 'updated: package version to 1.1.0',
                 hash: 'b32b88e',
@@ -108,13 +108,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             done();
         });
         test('test find changes block for a message dataset-4', function(done) {
-            const changesBlocks = convention.getDefaultChangesBlock();
+            const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'added: prettier config');
             expect(goodBlock).to.equal(changesBlocks[0]);
             done();
         });
         test('test find changes block for a message dataset-5', function(done) {
-            const changesBlocks = convention.getDefaultChangesBlock();
+            const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             changesBlocks[4].commits.push(
                 {
                     msg: 'fixed: changelog',
@@ -137,7 +137,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
                 messageRegex: [/^added:/i, /^add:/i, /^test:/i],
                 commits: [],
             };
-            const items = convention.getDefaultChangesBlock();
+            const items = convention.getDefaultChangesBlock('williamdes');
             expect(items[0]).to.deep.equal(changesBlockToFind);
             items[0].commits.push({
                 hash: 'd2c9361',
@@ -145,7 +145,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
                 msg: 'Added blabla blabla',
             });
             // This tests that the object is not passed by reference
-            expect(convention.getDefaultChangesBlock()[0]).to.deep.equal(changesBlockToFind);
+            expect(convention.getDefaultChangesBlock('williamdes')[0]).to.deep.equal(changesBlockToFind);
             done();
         });
     });
