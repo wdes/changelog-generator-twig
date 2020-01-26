@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.3]
 
 ### Added
 
@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Features
 
+- [110ec8b](https://github.com/wdes/changelog/commit/110ec8b97038bf08cf99debd87975871ba827929) feat: add command for "release before tag"
+- [ee2559a](https://github.com/wdes/changelog/commit/ee2559aea47b8a40fe52c40601342dfbc45df3fd) feat: add --lastTagName support
 - [e6b7f61](https://github.com/wdes/changelog/commit/e6b7f61d5021d53d9fcd16fb935006658cf61f20) feat: #4 - adjust conventions
 - [bc4b4c2](https://github.com/wdes/changelog/commit/bc4b4c2696902550ee71ce98dce149184b3b3eda) feat: #4 - support allchanges convention
 - [052ee5a](https://github.com/wdes/changelog/commit/052ee5a4be7e339237f3d9e4f5fe9562296b35c7) feat: #4 - support conventional commit spec
@@ -33,6 +35,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [e5c6ee2](https://github.com/wdes/changelog/commit/e5c6ee295cdb5d691a689e059d4de0b32b3b9c74) feat: Add disabled test for twig render error
 - [4347938](https://github.com/wdes/changelog/commit/43479387d08e75b7277d8b67c0ac6d4c9c9abf9a) feat: Add tests for repo is not a git dir
 - [fd08f91](https://github.com/wdes/changelog/commit/fd08f91653d7771b1c2406d908f786ed96f34314) feat: Check if file exists
+
+### Documentation
+
+- [e54c8c2](https://github.com/wdes/changelog/commit/e54c8c278d3f056bb3be23b85851e246f05b542e) docs: update README.md
 
 ### Others
 
@@ -89,7 +95,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
-[Unreleased]: https://github.com/wdes/changelog/compare/v1.2.0...HEAD
+[1.3]: https://github.com/wdes/changelog/compare/v1.2.0...1.3
 [v1.2.0]: https://github.com/wdes/changelog/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/wdes/changelog/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/wdes/changelog/compare/c295e8c3244b857b9d22fdd83a80d2f31cc6139b...v1.0.0
