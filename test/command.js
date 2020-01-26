@@ -119,5 +119,27 @@ module.exports = function() {
                 }
             );
         });
+        /*test('test command custom template with error in template file', function(done) {
+            const templateFile = __dirname + '/../src/CHANGELOG_error.twig';
+            exec(
+                pathBin +
+                    ' --owner testowner --repo test/repo --repoDir ' +
+                    __dirname +
+                    ' --template ' +
+                    templateFile +
+                    ' --baseCommit ' +
+                    'HEAD' +
+                    '/../CHANGELOG.twig',
+                (err, stdout, stderr) => {
+                    if (err) {
+                        done(err);
+                    } else {
+                        expect(stderr).to.contain('TwigException: errorhere function does not exist and is not defined in the context');
+                        expect(stdout).to.equal('');
+                        done();
+                    }
+                }
+            );
+        });*/
     });
 };
