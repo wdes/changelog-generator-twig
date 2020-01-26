@@ -1,5 +1,13 @@
 const getDefaultChangesBlock = function(conventionMode) {
     switch (conventionMode) {
+        case 'allchanges':
+            return [
+                {
+                    commits: [],
+                    name: '',
+                    messageRegex: [/^.*$/i],
+                },
+            ];
         case 'williamdes':
             return [
                 {

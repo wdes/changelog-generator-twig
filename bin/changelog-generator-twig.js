@@ -15,7 +15,7 @@ var argv = cli
     .option('    --headName <headName>', 'The head name', 'Unreleased')
     .option(
         '    --convention <conventionName>',
-        'The convention name (williamdes, conventional, conventional+legacy)',
+        'The convention name (williamdes, conventional, conventional+legacy, allchanges)',
         'conventional'
     )
     .option('    --baseCommit <commmitHash>', 'The base commit hash')

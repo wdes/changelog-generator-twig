@@ -1,6 +1,8 @@
 {% for commit in commits %}
 {# #}{% if loop.first %}
+{% if name is not empty %}
 {#    #}### {{name}}{{ '\n'|raw }}
+{% endif %}
 {# #}{% endif %}
 {# #}{# #}- [{{commit.hash}}](https://github.com/{{ owner }}/{{ repo }}/commit/{{commit.longHash}}) {{ commit.msg }}
 {# #}{% if not loop.last %}
