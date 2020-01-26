@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- [4756a32](https://github.com/wdes/changelog/commit/4756a32d9e55e4eb06e00855e5b4b42d584aa458) test: Add tests for an unknown convention
+- [7445445](https://github.com/wdes/changelog/commit/744544544890872e409b027480dce6182555e94e) test: add quick tests for conventional+legacy and allchanges conventions
+- [b6b3c7f](https://github.com/wdes/changelog/commit/b6b3c7ffc76ec63836fb1f23f6827492918d4142) test: fix tests after convention split
+
 ### Changed
 
 - [960f9ac](https://github.com/wdes/changelog/commit/960f9acfc2744d2273b6cfabb5037b6ce41cca85) updated: simple-git from 1.120.0 to 1.124.0 and mocha from 6.1.4 to 6.2.0
@@ -19,9 +25,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Features
 
-- [170fe88](https://github.com/wdes/changelog/commit/170fe88b42ef8ad89fdebba3a0ac878a7e1a15fa) feat: #4 - adjust conventions
-- [bca62b4](https://github.com/wdes/changelog/commit/bca62b43cdb4363627e73d271fa6912356793e8c) feat: #4 - support allchanges convention
-- [7317330](https://github.com/wdes/changelog/commit/7317330fc6297d2672e7acd94af52efc40620f94) feat: #4 - support conventional commit spec
+- [e6b7f61](https://github.com/wdes/changelog/commit/e6b7f61d5021d53d9fcd16fb935006658cf61f20) feat: #4 - adjust conventions
+- [bc4b4c2](https://github.com/wdes/changelog/commit/bc4b4c2696902550ee71ce98dce149184b3b3eda) feat: #4 - support allchanges convention
+- [052ee5a](https://github.com/wdes/changelog/commit/052ee5a4be7e339237f3d9e4f5fe9562296b35c7) feat: #4 - support conventional commit spec
 - [6ee1799](https://github.com/wdes/changelog/commit/6ee1799e216a528a2439b3b7bfd325406b40e9b2) feat: Simplify the changelog generation process
 - [2ffb8bd](https://github.com/wdes/changelog/commit/2ffb8bd6e194d495569f0f02c3d97fb54245117f) feat: add count commits function and test
 - [e5c6ee2](https://github.com/wdes/changelog/commit/e5c6ee295cdb5d691a689e059d4de0b32b3b9c74) feat: Add disabled test for twig render error
