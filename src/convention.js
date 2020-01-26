@@ -1,3 +1,5 @@
+'use strict';
+
 const getDefaultChangesBlock = function(conventionMode) {
     switch (conventionMode) {
         case 'allchanges':
