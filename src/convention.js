@@ -83,43 +83,88 @@ const getDefaultChangesBlock = function(conventionMode) {
                     name: 'Improvements',
                     messageRegex: [/^improve:/i, /^improved:/i, /^style:/i],
                 },
+                {
+                    commits: [],
+                    name: 'BREAKING CHANGES',
+                    messageRegex: [/^BREAKING CHANGE:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Features',
+                    messageRegex: [/^feat:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Fixes',
+                    messageRegex: [/^fix:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Performance',
+                    messageRegex: [/^perf:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Testing',
+                    messageRegex: [/^test:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Documentation',
+                    messageRegex: [/^docs:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Removed',
+                    messageRegex: [/^revert:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Others',
+                    messageRegex: [/^refactor:/i, /^build:/i, /^style:/i, /^ci:/i, /^chore:/i],
+                },
             ];
         case 'conventional':
             return [
                 {
                     commits: [],
-                    name: 'Added',
-                    messageRegex: [/^added:/i, /^add:/i, /^test:/i],
+                    name: 'BREAKING CHANGES',
+                    messageRegex: [/^BREAKING CHANGE:/i],
                 },
                 {
                     commits: [],
-                    name: 'Changed',
-                    messageRegex: [/^changed:/i, /^update:/i, /^updated:/i, /^moved:/i],
+                    name: 'Features',
+                    messageRegex: [/^feat:/i],
                 },
                 {
                     commits: [],
-                    name: 'Deprecated',
-                    messageRegex: [/^deprecated:/i],
+                    name: 'Fixes',
+                    messageRegex: [/^fix:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Performance',
+                    messageRegex: [/^perf:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Testing',
+                    messageRegex: [/^test:/i],
+                },
+                {
+                    commits: [],
+                    name: 'Documentation',
+                    messageRegex: [/^docs:/i],
                 },
                 {
                     commits: [],
                     name: 'Removed',
-                    messageRegex: [/^removed:/i, /^remove:/i],
+                    messageRegex: [/^revert:/i],
                 },
                 {
                     commits: [],
-                    name: 'Fixed',
-                    messageRegex: [/^fixed:/i, /^fix:/i, /^fixes:/i],
-                },
-                {
-                    commits: [],
-                    name: 'Security',
-                    messageRegex: [/^security:/i],
-                },
-                {
-                    commits: [],
-                    name: 'Improvements',
-                    messageRegex: [/^improve:/i, /^improved:/i, /^style:/i],
+                    name: 'Others',
+                    messageRegex: [/^refactor:/i, /^build:/i, /^style:/i, /^ci:/i, /^chore:/i],
                 },
             ];
         default:
