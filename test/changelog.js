@@ -62,5 +62,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
                 })
                 .catch(done);
         });
+        test('test count commits in changes', function(done) {
+            const count = changelog.countCommitsInChanges([
+                {
+                    name: 'Changes',
+                    messageRegex: [/^added:\s/gi, /^add:/gi, /^test:/gi],
+                    commits: [
+                        {
+                            hash: 'd2c9361',
+                            longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                            msg: 'Added blabla blabla',
+                        },
+                    ],
+                },
+            ]);
+            expect(count).to.equal(1);
+            done();
+        });
     });
 };

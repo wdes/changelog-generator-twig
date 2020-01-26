@@ -6,7 +6,12 @@ const git = require(__dirname + '/git');
 const fs = require('fs');
 const oFunctions = require(__dirname + '/oFunctions');
 
+const countCommitsInChanges = function(changes) {
+    return changes.map(item => item.commits.length).reduce((accumulator, currentVal) => accumulator + currentVal);
+};
+
 module.exports = {
+    countCommitsInChanges: countCommitsInChanges,
     getVersions: (headName, baseCommitHash, repoDir) => {
         return new Promise((resolve, reject) => {
             var changelog = {
