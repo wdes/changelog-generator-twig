@@ -12,6 +12,7 @@ var argv = cli
     .option('    --owner <owner>', 'The repo owner')
     .option('    --repo <repo>', 'The repo')
     .option('    --repoDir <repoDir>', 'The repo dir')
+    .option('    --lastTagName <lastTagName>', 'The last tag name', 'HEAD')
     .option('    --headName <headName>', 'The head name', 'Unreleased')
     .option(
         '    --convention <conventionName>',
@@ -31,5 +32,6 @@ require(__dirname + '/../src/index')(
     argv.headName,
     argv.baseCommit,
     argv.template,
-    argv.convention
+    argv.convention,
+    argv.lastTagName
 );

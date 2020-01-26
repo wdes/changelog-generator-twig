@@ -20,10 +20,10 @@ const findChangesBlockForMessage = function(changes, msg) {
 module.exports = {
     countCommitsInChanges: countCommitsInChanges,
     findChangesBlockForMessage: findChangesBlockForMessage,
-    getVersions: (headName, baseCommitHash, repoDir, conventionMode) => {
+    getVersions: (headName, baseCommitHash, repoDir, conventionMode, lastTagName) => {
         return new Promise((resolve, reject) => {
             var changelog = {
-                HEAD: [],
+                [lastTagName]: [],
             };
             if (!fs.existsSync(repoDir)) {
                 reject('Directory ' + repoDir + ' does not exist!');
@@ -32,7 +32,6 @@ module.exports = {
 
             git.log(repoDir)
                 .then(records => {
-                    var lastTagName = 'HEAD';
                     records.forEach(record => {
                         let lastTag = git.getLastTag(record.tag);
                         if (lastTag !== null) {
