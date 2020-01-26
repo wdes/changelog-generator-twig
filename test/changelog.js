@@ -148,5 +148,39 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(convention.getDefaultChangesBlock('williamdes')[0]).to.deep.equal(changesBlockToFind);
             done();
         });
+        test('test conventional+legacy convention', function(done) {
+            const changesBlockToFind = {
+                name: 'Added',
+                messageRegex: [/^added:/i, /^add:/i, /^test:/i],
+                commits: [],
+            };
+            const items = convention.getDefaultChangesBlock('conventional+legacy');
+            expect(items[0]).to.deep.equal(changesBlockToFind);
+            items[0].commits.push({
+                hash: 'd2c9361',
+                longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                msg: 'Added blabla blabla',
+            });
+            // This tests that the object is not passed by reference
+            expect(convention.getDefaultChangesBlock('conventional+legacy')[0]).to.deep.equal(changesBlockToFind);
+            done();
+        });
+        test('test allchanges convention', function(done) {
+            const changesBlockToFind = {
+                name: '',
+                messageRegex: [/^.*$/i],
+                commits: [],
+            };
+            const items = convention.getDefaultChangesBlock('allchanges');
+            expect(items[0]).to.deep.equal(changesBlockToFind);
+            items[0].commits.push({
+                hash: 'd2c9361',
+                longHash: 'd2c9361467b0e67e4c7a1bbfa092b342363450cc',
+                msg: 'Added blabla blabla',
+            });
+            // This tests that the object is not passed by reference
+            expect(convention.getDefaultChangesBlock('allchanges')[0]).to.deep.equal(changesBlockToFind);
+            done();
+        });
     });
 };
