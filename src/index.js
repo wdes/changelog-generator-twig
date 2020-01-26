@@ -9,7 +9,7 @@ module.exports = (args, repoDir, owner, repo, headName, baseCommit, templateFile
             changelog
                 .render(args, owner, repo, versionInfo.versions, versionInfo.links, templateFile)
                 .then(html => console.log(html))
-                .catch(err => console.log(err));
+                .catch(err => console.error(err));
         })
-        .catch(err => console.log(err));
+        .catch(err => console.error(err));
 };

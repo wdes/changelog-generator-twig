@@ -9,13 +9,14 @@ module.exports = function() {
         test('test command', function(done) {
             exec(
                 pathBin + ' --owner testowner --repo test/repo --repoDir ' + __dirname + ' --baseCommit ' + 'HEAD',
-                (err, stdout) => {
+                (err, stdout, stderr) => {
                     if (err) {
                         done(err);
                     } else {
                         expect(stdout).to.contain(
                             '# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)\nand this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).'
                         );
+                        expect(stderr).to.equal('');
                         done();
                     }
                 }
@@ -32,13 +33,14 @@ module.exports = function() {
                     ' --baseCommit ' +
                     'HEAD' +
                     '/../CHANGELOG.twig',
-                (err, stdout) => {
+                (err, stdout, stderr) => {
                     if (err) {
                         done(err);
                     } else {
                         expect(stdout).to.contain(
                             '# Changelog\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)\nand this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).'
                         );
+                        expect(stderr).to.equal('');
                         done();
                     }
                 }
@@ -56,11 +58,12 @@ module.exports = function() {
                     ' --baseCommit ' +
                     'HEAD' +
                     '/../CHANGELOG.twig',
-                (err, stdout) => {
+                (err, stdout, stderr) => {
                     if (err) {
                         done(err);
                     } else {
-                        expect(stdout).to.equal('Directory ' + repoDir + ' does not exist!');
+                        expect(stderr).to.equal('Directory ' + repoDir + ' does not exist!\n');
+                        expect(stdout).to.equal('');
                         done();
                     }
                 }
@@ -77,11 +80,12 @@ module.exports = function() {
                     ' --baseCommit ' +
                     'HEAD' +
                     '/../CHANGELOG.twig',
-                (err, stdout) => {
+                (err, stdout, stderr) => {
                     if (err) {
                         done(err);
                     } else {
-                        expect(stdout).to.equal('File ' + templateFile + ' does not exist!\n');
+                        expect(stderr).to.equal('File ' + templateFile + ' does not exist!\n');
+                        expect(stdout).to.equal('');
                         done();
                     }
                 }
