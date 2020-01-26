@@ -23,7 +23,7 @@ jobs:
                   path: ~/.npm/
                   key: npm-cache
             - name: Install modules
-              run: npm ci
+              run: npm i
             - name: Run node tests
               run: |
                   npm run test
