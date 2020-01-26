@@ -36,14 +36,16 @@ Usage: changelog-generator-twig [options]
 A changelog generator using twig templates
 
 Options:
-      --owner <owner>              The repo owner
-      --repo <repo>                The repo
-      --repoDir <repoDir>          The repo dir
-      --headName <headName>        The head name (default: Unreleased)
-      --baseCommit <commmitHash>   The base commit hash
-      --template <templatePath>    The twig template path (default: /mnt/Dev/@wdes/test/node_modules/changelog-generator-twig/src/CHANGELOG.twig)
-      --version                    display version information and exit
-      --help                       display this help and exit
+      --owner <owner>                 The repo owner
+      --repo <repo>                   The repo
+      --repoDir <repoDir>             The repo dir
+      --lastTagName <lastTagName>     The last tag name (default: HEAD)
+      --headName <headName>           The head name (default: Unreleased)
+      --convention <conventionName>   The convention name (williamdes, conventional, conventional+legacy, allchanges) (default: conventional)
+      --baseCommit <commmitHash>      The base commit hash
+      --template <templatePath>       The twig template path (default: /mnt/Dev/@wdes/changelog/src/CHANGELOG.twig)
+      --version                       display version information and exit
+      --help                          display this help and exit
 
 ```
 
