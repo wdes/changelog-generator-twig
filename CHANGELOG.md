@@ -8,7 +8,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- [960f9ac](https://github.com/wdes/changelog/commit/960f9acfc2744d2273b6cfabb5037b6ce41cca85) updated: simple-git from 1.120.0 to 1.124.0 and mocha from 6.1.4 to 6.2.0
+- [b241d92](https://github.com/wdes/changelog/commit/b241d921b1bae65a359b06fbe2e6160fbd8f9a65) updated: simple-git from 1.116.0 to 1.120.0
+- [7832fea](https://github.com/wdes/changelog/commit/7832fea02027800dd2889567d72c0f1cec9f75bf) updated: package.json and bump some package versions
 - [d787600](https://github.com/wdes/changelog/commit/d7876006bd5bb95cbcd01387b0b073e3321a3e1f) updated: CHANGELOG.md
+
+### Fixed
+
+- [745ec03](https://github.com/wdes/changelog/commit/745ec03d6de50cf06107fc08ce6bd836286ffa26) fix: use stderr for errors
+
+### Features
+
+- [170fe88](https://github.com/wdes/changelog/commit/170fe88b42ef8ad89fdebba3a0ac878a7e1a15fa) feat: #4 - adjust conventions
+- [bca62b4](https://github.com/wdes/changelog/commit/bca62b43cdb4363627e73d271fa6912356793e8c) feat: #4 - support allchanges convention
+- [7317330](https://github.com/wdes/changelog/commit/7317330fc6297d2672e7acd94af52efc40620f94) feat: #4 - support conventional commit spec
+- [6ee1799](https://github.com/wdes/changelog/commit/6ee1799e216a528a2439b3b7bfd325406b40e9b2) feat: Simplify the changelog generation process
+- [2ffb8bd](https://github.com/wdes/changelog/commit/2ffb8bd6e194d495569f0f02c3d97fb54245117f) feat: add count commits function and test
+- [e5c6ee2](https://github.com/wdes/changelog/commit/e5c6ee295cdb5d691a689e059d4de0b32b3b9c74) feat: Add disabled test for twig render error
+- [4347938](https://github.com/wdes/changelog/commit/43479387d08e75b7277d8b67c0ac6d4c9c9abf9a) feat: Add tests for repo is not a git dir
+- [fd08f91](https://github.com/wdes/changelog/commit/fd08f91653d7771b1c2406d908f786ed96f34314) feat: Check if file exists
+
+### Others
+
+- [a2f90cb](https://github.com/wdes/changelog/commit/a2f90cb7649338bf0c65c501e008ae615d290a34) ci: remove travis ci file
+- [ee0009c](https://github.com/wdes/changelog/commit/ee0009cf98205c60505e8c036c77e5466505d6c0) ci: Move to GitHub actions
+- [fdb008b](https://github.com/wdes/changelog/commit/fdb008bb539b6289bb2c46682e9d689303049c21) chore: dependencies
 
 ## [v1.2.0]
 
