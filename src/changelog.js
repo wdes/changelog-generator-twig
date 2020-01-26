@@ -3,6 +3,7 @@
 
 const Twig = require('twig'); // Twig module
 const git = require(__dirname + '/git');
+const fs = require('fs');
 const oFunctions = require(__dirname + '/oFunctions');
 
 module.exports = {
@@ -11,6 +12,10 @@ module.exports = {
             var changelog = {
                 HEAD: [],
             };
+            if (!fs.existsSync(repoDir)) {
+                reject('Directory ' + repoDir + ' does not exist!');
+                return;
+            }
             git.log(repoDir)
                 .then(records => {
                     var lastTagName = 'HEAD';
@@ -111,6 +116,10 @@ module.exports = {
     },
     render: (args, owner, repo, versions, links, templateFile) => {
         return new Promise((resolve, reject) => {
+            if (!fs.existsSync(templateFile)) {
+                reject('File ' + templateFile + ' does not exist!');
+                return;
+            }
             Twig.renderFile(
                 templateFile,
                 {
