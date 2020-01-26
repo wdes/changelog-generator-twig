@@ -5,6 +5,7 @@ const Twig = require('twig'); // Twig module
 const git = require(__dirname + '/git');
 const fs = require('fs');
 const oFunctions = require(__dirname + '/oFunctions');
+const convention = require(__dirname + '/convention');
 
 const countCommitsInChanges = function(changes) {
     return changes.map(item => item.commits.length).reduce((accumulator, currentVal) => accumulator + currentVal);
@@ -16,51 +17,10 @@ const findChangesBlockForMessage = function(changes, msg) {
     });
 };
 
-const getDefaultChangesBlock = function() {
-    return [
-        {
-            commits: [],
-            name: 'Added',
-            messageRegex: [/^added:/i, /^add:/i, /^test:/i],
-        },
-        {
-            commits: [],
-            name: 'Changed',
-            messageRegex: [/^changed:/i, /^update:/i, /^updated:/i, /^moved:/i],
-        },
-        {
-            commits: [],
-            name: 'Deprecated',
-            messageRegex: [/^deprecated:/i],
-        },
-        {
-            commits: [],
-            name: 'Removed',
-            messageRegex: [/^removed:/i, /^remove:/i],
-        },
-        {
-            commits: [],
-            name: 'Fixed',
-            messageRegex: [/^fixed:/i, /^fix:/i, /^fixes:/i],
-        },
-        {
-            commits: [],
-            name: 'Security',
-            messageRegex: [/^security:/i],
-        },
-        {
-            commits: [],
-            name: 'Improvements',
-            messageRegex: [/^improve:/i, /^improved:/i, /^style:/i],
-        },
-    ];
-};
-
 module.exports = {
     countCommitsInChanges: countCommitsInChanges,
     findChangesBlockForMessage: findChangesBlockForMessage,
-    getDefaultChangesBlock: getDefaultChangesBlock,
-    getVersions: (headName, baseCommitHash, repoDir) => {
+    getVersions: (headName, baseCommitHash, repoDir, conventionMode) => {
         return new Promise((resolve, reject) => {
             var changelog = {
                 HEAD: [],
@@ -87,7 +47,7 @@ module.exports = {
                     var links = [];
                     var versions = [];
                     for (var version in changelog) {
-                        let changes = getDefaultChangesBlock();
+                        let changes = convention.getDefaultChangesBlock(conventionMode);
                         links.push({
                             name: version.trim().replace('HEAD', headName),
                             start: oFunctions.keys.next(changelog, version) || baseCommitHash,

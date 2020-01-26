@@ -13,6 +13,11 @@ var argv = cli
     .option('    --repo <repo>', 'The repo')
     .option('    --repoDir <repoDir>', 'The repo dir')
     .option('    --headName <headName>', 'The head name', 'Unreleased')
+    .option(
+        '    --convention <conventionName>',
+        'The convention name (williamdes, conventional, conventional+legacy)',
+        'conventional'
+    )
     .option('    --baseCommit <commmitHash>', 'The base commit hash')
     .option('    --template <templatePath>', 'The twig template path', defaultTemplate)
     .allowArgumentCount(3)
@@ -25,5 +30,6 @@ require(__dirname + '/../src/index')(
     argv.repo,
     argv.headName,
     argv.baseCommit,
-    argv.template
+    argv.template,
+    argv.convention
 );
