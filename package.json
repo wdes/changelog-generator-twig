@@ -40,16 +40,16 @@
     },
     "homepage": "https://github.com/wdes/changelog#readme",
     "dependencies": {
-        "simple-git": "^1.124.0",
+        "simple-git": "^1.130.0",
         "snack-cli": "^2.0.0",
-        "twig": "^1.13.3"
+        "twig": "^1.14.0"
     },
     "devDependencies": {
         "chai": "^4.2.0",
-        "jshint": "^2.10.2",
-        "mocha": "^6.2.0",
+        "jshint": "^2.11.0",
+        "mocha": "^7.0.1",
         "nyc": "^15.0.0",
-        "prettier": "^1.18.2"
+        "prettier": "^1.19.1"
     },
     "prettier": {
         "singleQuote": true,
