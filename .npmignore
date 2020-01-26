@@ -9,5 +9,5 @@
 /.editorconfig
 /.jshintrc
 /.jshintignore
-/.travis.yml
+/.github
 /.dependabot

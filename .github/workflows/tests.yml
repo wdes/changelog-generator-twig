@@ -1,0 +1,34 @@
+name: Run tests
+
+on: [push]
+
+jobs:
+    test-node:
+        name: Test on node ${{ matrix.node_version }}
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                node_version: ["10", "12"]
+                os: [ubuntu-latest]
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js ${{ matrix.node_version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node_version }}
+            - name: Cache module
+              uses: actions/cache@v1.0.3
+              with:
+                  path: ~/.npm/
+                  key: npm-cache
+            - name: Install modules
+              run: npm ci
+            - name: Run node tests
+              run: |
+                  npm run test
+                  npm run report-coverage
+            - name: Send coverage
+              uses: codecov/codecov-action@v1
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}

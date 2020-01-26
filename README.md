@@ -1,6 +1,7 @@
 # A NodeJS changelog generator that uses twig templates
 
-[![Build Status](https://travis-ci.com/wdes/changelog.svg?branch=master)](https://travis-ci.com/wdes/changelog)
+[![Actions Status](https://github.com/wdes/changelog/workflows/Run%20tests/badge.svg)](https://github.com/wdes/changelog/actions)
+[![Actions Status](https://github.com/wdes/changelog/workflows/Lint%20and%20analyse%20files/badge.svg)](https://github.com/wdes/changelog/actions)
 [![codecov](https://codecov.io/gh/wdes/changelog/branch/master/graph/badge.svg)](https://codecov.io/gh/wdes/changelog)
 [![npm version](https://badge.fury.io/js/changelog-generator-twig.svg)](https://badge.fury.io/js/changelog-generator-twig)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/wdes/changelog.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/wdes/changelog/alerts/)
