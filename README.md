@@ -67,6 +67,13 @@ See changelog example here: https://github.com/williamdes/mariadb-mysql-kbs/blob
 changelog-generator-twig --owner williamdes --repo mariadb-mysql-kbs --repoDir /mnt/Dev/@williamdes/mariadb-mysql-kbs/ --baseCommit 4282724e1e04d6b27d3c0744e1a37a50be740237 --template ./CHANGELOG_template.twig
 `
 
+#### Release before tag
+This will set links to next version and rename the current version
+```
+NEXT_VERSION=1.4
+--headName $NEXT_VERSION --lastTagName $NEXT_VERSION
+```
+
 ##### Data passed to twig template
 
 ```
