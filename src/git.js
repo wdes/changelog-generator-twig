@@ -25,7 +25,6 @@ const log = repoDir => {
                     resolve(log.all);
                 })
                 .catch(err => {
-                    console.log(err);
                     reject(err);
                 });
         });

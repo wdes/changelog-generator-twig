@@ -2,6 +2,9 @@
 
 const expect = require('chai').expect;
 const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
 
 module.exports = function() {
     suite('command', function() {
@@ -64,6 +67,31 @@ module.exports = function() {
                     } else {
                         expect(stderr).to.equal('Directory ' + repoDir + ' does not exist!\n');
                         expect(stdout).to.equal('');
+                        done();
+                    }
+                }
+            );
+        });
+        test('test command custom template with a non git dir', function(done) {
+            const repoDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wdes-changelog'));
+            exec(
+                pathBin +
+                    ' --owner testowner --repo test/repo --repoDir ' +
+                    repoDir +
+                    ' --template ' +
+                    __dirname +
+                    '/../src/CHANGELOG.twig' +
+                    ' --baseCommit ' +
+                    'HEAD' +
+                    '/../CHANGELOG.twig',
+                (err, stdout, stderr) => {
+                    if (err) {
+                        fs.rmdirSync(repoDir);
+                        done(err);
+                    } else {
+                        expect(stdout).to.equal('');
+                        expect(stderr).to.contain('Error: fatal:');
+                        fs.rmdirSync(repoDir);
                         done();
                     }
                 }
