@@ -41,7 +41,7 @@
     },
     "homepage": "https://github.com/wdes/changelog#readme",
     "dependencies": {
-        "simple-git": "^1.130.0",
+        "simple-git": "^1.131.0",
         "snack-cli": "^2.0.0",
         "twig": "^1.14.0"
     },
