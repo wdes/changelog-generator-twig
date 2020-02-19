@@ -32,7 +32,7 @@ const log = repoDir => {
 };
 
 const getLastTag = function(tagsString) {
-    const regexTags = /tag\:\s*(?<tag>[a-z0-9_\./]*)\,?/gi;
+    const regexTags = /tag\:\s*(?<tag>[a-z0-9_\.\/-]*)\,?/gi;
     const matchs = regexTags.exec(tagsString);
     if (matchs) {
         return matchs[1];

@@ -23,6 +23,10 @@ module.exports = function() {
             );
             done();
         });
+        test('get last tag (dataset-5)', function(done) {
+            expect(git.getLastTag('tag: production/deploy/2020-02-19.1')).to.equal('production/deploy/2020-02-19.1');
+            done();
+        });
         test('changelog', function(done) {
             git.log(__dirname)
                 .then(records => {
