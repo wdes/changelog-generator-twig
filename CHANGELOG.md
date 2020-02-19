@@ -4,7 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.3]
+## [v1.3.1]
+
+### Fixed
+
+- [4c225ac](https://github.com/wdes/changelog/commit/4c225ac1879ac8517cf7ac868d1e83fddd704142) fix: tag that contains '-'
+
+### Others
+
+- [2e64465](https://github.com/wdes/changelog/commit/2e64465f9a1f32bf08d6871c2881933107efd62f) chore: upgrade simple-git
+- [0d19bb1](https://github.com/wdes/changelog/commit/0d19bb1bfef921796b17fea4237c869766f8f3de) chore: fix lint error
+
+## [v1.3.0]
 
 ### Added
 
@@ -95,7 +106,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
-[1.3]: https://github.com/wdes/changelog/compare/v1.2.0...1.3
+[v1.3.1]: https://github.com/wdes/changelog/compare/v1.3.0...v1.3.1
+[v1.3.0]: https://github.com/wdes/changelog/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/wdes/changelog/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/wdes/changelog/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/wdes/changelog/compare/c295e8c3244b857b9d22fdd83a80d2f31cc6139b...v1.0.0
