@@ -7,7 +7,7 @@ var oFunctions = {};
 oFunctions.keys = {};
 
 //NEXT KEY
-oFunctions.keys.next = function(o, id) {
+oFunctions.keys.next = function (o, id) {
     var keys = Object.keys(o),
         idIndex = keys.indexOf(id),
         nextIndex = (idIndex += 1);

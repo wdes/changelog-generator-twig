@@ -4,9 +4,9 @@ const expect = require('chai').expect;
 const changelog = require(__dirname + '/../src/changelog');
 const convention = require(__dirname + '/../src/convention');
 
-module.exports = function() {
-    suite('changelog', function() {
-        test('test changelog render', function(done) {
+module.exports = function () {
+    suite('changelog', function () {
+        test('test changelog render', function (done) {
             changelog
                 .render(
                     [],
@@ -41,7 +41,7 @@ module.exports = function() {
                     ],
                     __dirname + '/../src/CHANGELOG.twig'
                 )
-                .then(html => {
+                .then((html) => {
                     expect(html).to.equal(
                         `# Changelog
 All notable changes to this project will be documented in this file.
@@ -63,7 +63,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
                 })
                 .catch(done);
         });
-        test('test count commits in changes', function(done) {
+        test('test count commits in changes', function (done) {
             const count = changelog.countCommitsInChanges([
                 {
                     name: 'Changes',
@@ -80,7 +80,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(count).to.equal(1);
             done();
         });
-        test('test find changes block for a message dataset-1', function(done) {
+        test('test find changes block for a message dataset-1', function (done) {
             const changesBlockToFind = {
                 name: 'Added',
                 messageRegex: [/^added:/i, /^add:/i, /^test:/i],
@@ -90,13 +90,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(goodBlock).to.equal(changesBlockToFind);
             done();
         });
-        test('test find changes block for a message dataset-2', function(done) {
+        test('test find changes block for a message dataset-2', function (done) {
             const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'fixed: .npmignore');
             expect(goodBlock).to.equal(changesBlocks[4]);
             done();
         });
-        test('test find changes block for a message dataset-3', function(done) {
+        test('test find changes block for a message dataset-3', function (done) {
             const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             changesBlocks[1].commits.push({
                 msg: 'updated: package version to 1.1.0',
@@ -107,13 +107,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(goodBlock).to.equal(changesBlocks[1]);
             done();
         });
-        test('test find changes block for a message dataset-4', function(done) {
+        test('test find changes block for a message dataset-4', function (done) {
             const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'added: prettier config');
             expect(goodBlock).to.equal(changesBlocks[0]);
             done();
         });
-        test('test find changes block for a message dataset-5', function(done) {
+        test('test find changes block for a message dataset-5', function (done) {
             const changesBlocks = convention.getDefaultChangesBlock('williamdes');
             changesBlocks[4].commits.push(
                 {
@@ -131,7 +131,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(goodBlock).to.equal(changesBlocks[4]);
             done();
         });
-        test('test get default changes block', function(done) {
+        test('test get default changes block', function (done) {
             const changesBlockToFind = {
                 name: 'Added',
                 messageRegex: [/^added:/i, /^add:/i, /^test:/i],
@@ -148,7 +148,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(convention.getDefaultChangesBlock('williamdes')[0]).to.deep.equal(changesBlockToFind);
             done();
         });
-        test('test conventional+legacy convention', function(done) {
+        test('test conventional+legacy convention', function (done) {
             const changesBlockToFind = {
                 name: 'Added',
                 messageRegex: [/^added:/i, /^add:/i, /^test:/i],
@@ -165,7 +165,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(convention.getDefaultChangesBlock('conventional+legacy')[0]).to.deep.equal(changesBlockToFind);
             done();
         });
-        test('test allchanges convention', function(done) {
+        test('test allchanges convention', function (done) {
             const changesBlockToFind = {
                 name: '',
                 messageRegex: [/^.*$/i],
@@ -182,7 +182,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(convention.getDefaultChangesBlock('allchanges')[0]).to.deep.equal(changesBlockToFind);
             done();
         });
-        test('test unknown convention', function(done) {
+        test('test unknown convention', function (done) {
             const items = convention.getDefaultChangesBlock('unknown');
             expect(items).to.deep.equal([]);
             done();

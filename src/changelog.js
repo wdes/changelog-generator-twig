@@ -7,13 +7,13 @@ const fs = require('fs');
 const oFunctions = require(__dirname + '/oFunctions');
 const convention = require(__dirname + '/convention');
 
-const countCommitsInChanges = function(changes) {
-    return changes.map(item => item.commits.length).reduce((accumulator, currentVal) => accumulator + currentVal);
+const countCommitsInChanges = function (changes) {
+    return changes.map((item) => item.commits.length).reduce((accumulator, currentVal) => accumulator + currentVal);
 };
 
-const findChangesBlockForMessage = function(changes, msg) {
-    return changes.find(change => {
-        return change.messageRegex.some(rx => rx.test(msg));
+const findChangesBlockForMessage = function (changes, msg) {
+    return changes.find((change) => {
+        return change.messageRegex.some((rx) => rx.test(msg));
     });
 };
 
@@ -31,8 +31,8 @@ module.exports = {
             }
 
             git.log(repoDir)
-                .then(records => {
-                    records.forEach(record => {
+                .then((records) => {
+                    records.forEach((record) => {
                         let lastTag = git.getLastTag(record.tag);
                         if (lastTag !== null) {
                             lastTagName = lastTag;

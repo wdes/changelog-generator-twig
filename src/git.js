@@ -3,7 +3,7 @@
 const simpleGit = require('simple-git/promise');
 const hash = Math.random() * 10e8; // A random separator ?
 
-const log = repoDir => {
+const log = (repoDir) => {
     return new Promise((resolve, reject) => {
         var git = simpleGit(repoDir);
         git.cwd(repoDir).then(() => {
@@ -21,17 +21,17 @@ const log = repoDir => {
                     body: '%b',
                 },
             })
-                .then(log => {
+                .then((log) => {
                     resolve(log.all);
                 })
-                .catch(err => {
+                .catch((err) => {
                     reject(err);
                 });
         });
     });
 };
 
-const getLastTag = function(tagsString) {
+const getLastTag = function (tagsString) {
     const regexTags = /tag\:\s*(?<tag>[a-z0-9_\.\/-]*)\,?/gi;
     const matchs = regexTags.exec(tagsString);
     if (matchs) {

@@ -6,10 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-module.exports = function() {
-    suite('command', function() {
+module.exports = function () {
+    suite('command', function () {
         const pathBin = __dirname + '/../bin/changelog-generator-twig.js';
-        test('test command', function(done) {
+        test('test command', function (done) {
             exec(
                 pathBin + ' --owner testowner --repo test/repo --repoDir ' + __dirname + ' --baseCommit ' + 'HEAD',
                 (err, stdout, stderr) => {
@@ -25,7 +25,7 @@ module.exports = function() {
                 }
             );
         });
-        test('test command custom template', function(done) {
+        test('test command custom template', function (done) {
             exec(
                 pathBin +
                     ' --owner testowner --repo test/repo --repoDir ' +
@@ -49,7 +49,7 @@ module.exports = function() {
                 }
             );
         });
-        test('test command custom template with error in repo dir', function(done) {
+        test('test command custom template with error in repo dir', function (done) {
             const repoDir = __dirname + 'typo';
             exec(
                 pathBin +
@@ -72,7 +72,7 @@ module.exports = function() {
                 }
             );
         });
-        test('test command custom template with a non git dir', function(done) {
+        test('test command custom template with a non git dir', function (done) {
             const repoDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wdes-changelog'));
             exec(
                 pathBin +
@@ -97,7 +97,7 @@ module.exports = function() {
                 }
             );
         });
-        test('test command custom template with error in template name', function(done) {
+        test('test command custom template with error in template name', function (done) {
             const templateFile = __dirname + '/../src/CHANGELOGooops.twig';
             exec(
                 pathBin +
