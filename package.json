@@ -22,7 +22,7 @@
         "jshint": "jshint ./",
         "test": "nyc --all mocha --ui tdd",
         "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
-        "prettier": "prettier --ignore-path ./.prettierignore --write \"*/**/*.js\" \"*.js\""
+        "prettier": "prettier --ignore-path ./.prettierignore --write \"*/**/*.js\""
     },
     "keywords": [
         "changelog",
