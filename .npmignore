@@ -10,6 +10,5 @@
 /.jshintrc
 /.jshintignore
 /.github
-/.dependabot
 .editorconfig
 /src/CHANGELOG_error.twig
