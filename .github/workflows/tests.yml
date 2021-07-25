@@ -8,7 +8,7 @@ jobs:
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                node_version: ["10", "12"]
+                node_version: ["12", "14", "15", "16"]
                 os: [ubuntu-latest]
 
         steps:
@@ -23,12 +23,10 @@ jobs:
                   path: ~/.npm/
                   key: npm-cache
             - name: Install modules
-              run: npm i
+              run: yarn install
             - name: Run node tests
               run: |
                   npm run test
                   npm run report-coverage
             - name: Send coverage
               uses: codecov/codecov-action@v1
-              with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
