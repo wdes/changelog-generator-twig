@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v1.3.2]
+
+### Fixed
+
+- [405dfc5](https://github.com/wdes/changelog/commit/405dfc5830ad6acd39d4093da9ae85c46092329d) fix: splitter char for git log
+- [2f835e9](https://github.com/wdes/changelog/commit/2f835e9df9030b80deee7f5bba576ef1ae123fc4) fix: import 'simple-git/promise' changes for 'simple-git'
+- [059a71f](https://github.com/wdes/changelog/commit/059a71f048e31dfec78691629679f067fb389199) fix: remove unused pattern in prettier command
+
+### Improvements
+
+- [d41883c](https://github.com/wdes/changelog/commit/d41883c3968bf6f55635be992ed03326fec6b990) style: run prettier v2
+
+### Others
+
+- [2c2fd35](https://github.com/wdes/changelog/commit/2c2fd35810cfa60d82fbc4b333c6e5a7b911692e) chore: change base commit for changelog command
+- [3c3ab67](https://github.com/wdes/changelog/commit/3c3ab676e1c074114a89761c85f0638a5c8b6ae0) chore: use a local variable and not array access
+- [6a911bc](https://github.com/wdes/changelog/commit/6a911bcad0313feb6c96bdb77d10830b6a070ded) ci: use different namings for v19 and v20
+- [e42dad3](https://github.com/wdes/changelog/commit/e42dad30a087fb3cd385a44e135146c75bacc94f) ci: bump actions/setup-node to v3
+- [4d2e103](https://github.com/wdes/changelog/commit/4d2e103f194461245794008a3d8830f33f959179) ci: test on NodeJS 14/18/19/20
+- [04ad275](https://github.com/wdes/changelog/commit/04ad2750bbe3eecbb781b562b185ecb7300c56f2) ci: rename a step
+- [b6d8a07](https://github.com/wdes/changelog/commit/b6d8a074caf08b14dd037c501820c8f6a6f333d6) chore: bump all dependencies
+- [1f1ab82](https://github.com/wdes/changelog/commit/1f1ab82f642f60f011283b462a132c6235d931a2) ci: drop dependabot
+- [9c39807](https://github.com/wdes/changelog/commit/9c398078505267a9c16c282f9e406a2309f86db6) ci: bump actions/checkout and actions/cache to v3
+- [e09871f](https://github.com/wdes/changelog/commit/e09871f87ef000754e2e28ba430cac3b46e5c7e1) chore: update dependencies
+- [1bb0c96](https://github.com/wdes/changelog/commit/1bb0c96eb952257799eea0448ce43c030e2eaa53) chore: update dependencies
+- [9349aab](https://github.com/wdes/changelog/commit/9349aab7da5e3d5a9802cce5a4b419d0fc94a8d4) ci: Update actions/cache and actions/checkout to v2
+- [6b47583](https://github.com/wdes/changelog/commit/6b475838b7fd9535eace4b221559873ac495ad4d) chore: upgrade simple-git, jshint, nyc
+- [01257aa](https://github.com/wdes/changelog/commit/01257aab3aa6ef6c8e4cd4a2b13a31dc9ec72701) ci: upgrade sudo-bot/action-pull-request-merge to 1.1.1
+- [b2e9b0b](https://github.com/wdes/changelog/commit/b2e9b0b58a8b832bbea060737a8114b8034614a4) chore: upgrade twig, mocha, nyc
+- [6b4a71b](https://github.com/wdes/changelog/commit/6b4a71bc86b8b4a0ee7059eb3250a47f4cb856aa) chore: add a .gitattributes file
+- [7c0c809](https://github.com/wdes/changelog/commit/7c0c8099800bc62d760d4a706cdd69c85e6c9f54) chore: bump prettier and simple-git
+
 ## [v1.3.1]
 
 ### Fixed
@@ -106,9 +138,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
+[v1.3.2]: https://github.com/wdes/changelog/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/wdes/changelog/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/wdes/changelog/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/wdes/changelog/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/wdes/changelog/compare/v1.0.0...v1.1.0
-[v1.0.0]: https://github.com/wdes/changelog/compare/c295e8c3244b857b9d22fdd83a80d2f31cc6139b...v1.0.0
+[v1.0.0]: https://github.com/wdes/changelog/compare/v1.0.0...v1.0.0
 
