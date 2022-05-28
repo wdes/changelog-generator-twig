@@ -9,7 +9,7 @@ jobs:
         strategy:
             matrix:
                 # Source: https://nodejs.org/en/about/releases/#releases
-                node_version: ["14", "16", "18", "19", "20"]
+                node_version: ["14", "16", "18", "lts/*", "latest"]
                 os: [ubuntu-latest]
 
         steps:
