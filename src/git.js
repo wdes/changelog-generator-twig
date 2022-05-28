@@ -7,7 +7,7 @@ const log = (repoDir) => {
         var git = simpleGit(repoDir);
         git.cwd(repoDir).then(() => {
             git.log({
-                splitter: '‡',// I hope nobody uses it in their git log
+                splitter: '‡', // I hope nobody uses it in their git log
                 format: {
                     tag: '%D',
                     note: '%N',
