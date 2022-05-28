@@ -1,6 +1,6 @@
 'use strict';
 
-const simpleGit = require('simple-git/promise');
+const simpleGit = require('simple-git');
 const hash = Math.random() * 10e8; // A random separator ?
 
 const log = (repoDir) => {
