@@ -16,7 +16,7 @@
         ]
     },
     "scripts": {
-        "changelog": "./bin/changelog-generator-twig.js --convention conventional+legacy --owner wdes --repo changelog --repoDir ./ --baseCommit c295e8c3244b857b9d22fdd83a80d2f31cc6139b",
+        "changelog": "./bin/changelog-generator-twig.js --convention conventional+legacy --owner wdes --repo changelog --repoDir ./ --baseCommit v1.0.0",
         "changelog-file-next": "npm run --silent changelog -- --headName $NEXT_VERSION --lastTagName $NEXT_VERSION > CHANGELOG.md",
         "changelog-file": "npm run --silent changelog > CHANGELOG.md",
         "jshint": "jshint ./",
