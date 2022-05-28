@@ -61,8 +61,8 @@ module.exports = {
                             if (block && typeof block.commits === 'object') {
                                 block.commits.push({
                                     msg: msg,
-                                    hash: changelog[version][commitid].hash.trim(),
-                                    longHash: changelog[version][commitid].longHash.trim(),
+                                    hash: commit.hash.trim(),
+                                    longHash: commit.longHash.trim(),
                                 });
                             }
                         }
