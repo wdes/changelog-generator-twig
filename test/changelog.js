@@ -131,6 +131,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
             expect(goodBlock).to.equal(changesBlocks[4]);
             done();
         });
+        test('test find changes block for a message dataset-6', function (done) {
+            const changesBlocks = convention.getDefaultChangesBlock('conventional+legacy');
+            changesBlocks[4].commits.push(
+                {
+                    msg: 'feat: Add tests for repo is not a git dir',
+                    hash: '4347938',
+                    longHash: '43479387d08e75b7277d8b67c0ac6d4c9c9abf9a',
+                },
+                {
+                    msg: 'update: snack-cli from 1.1.0 to 2.0.0',
+                    hash: 'c071427',
+                    longHash: 'c071427b0c545cee6125d24e42d639543f2474d3',
+                }
+            );
+            const goodBlock = changelog.findChangesBlockForMessage(changesBlocks, 'fixed: .npmignore');
+            expect(goodBlock).to.equal(changesBlocks[4]);
+            done();
+        });
         test('test get default changes block', function (done) {
             const changesBlockToFind = {
                 name: 'Added',
