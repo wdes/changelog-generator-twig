@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [v1.3.2]
+## [Unreleased]
+## [v1.4.0]
 
 ### Fixed
 
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Others
 
+- [c0354bf](https://github.com/wdes/changelog/commit/c0354bf7cb981749c7a26c1f68d1ccee3aa4b465) chore: do not publish .gitattributes
 - [2c2fd35](https://github.com/wdes/changelog/commit/2c2fd35810cfa60d82fbc4b333c6e5a7b911692e) chore: change base commit for changelog command
 - [3c3ab67](https://github.com/wdes/changelog/commit/3c3ab676e1c074114a89761c85f0638a5c8b6ae0) chore: use a local variable and not array access
 - [6a911bc](https://github.com/wdes/changelog/commit/6a911bcad0313feb6c96bdb77d10830b6a070ded) ci: use different namings for v19 and v20
@@ -138,7 +140,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
-[v1.3.2]: https://github.com/wdes/changelog/compare/v1.3.1...v1.3.2
+[Unreleased]: https://github.com/wdes/changelog/compare/v1.4.0...HEAD
+[v1.4.0]: https://github.com/wdes/changelog/compare/v1.3.1...v1.4.0
 [v1.3.1]: https://github.com/wdes/changelog/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/wdes/changelog/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/wdes/changelog/compare/v1.1.0...v1.2.0
