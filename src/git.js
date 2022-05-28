@@ -1,14 +1,13 @@
 'use strict';
 
 const simpleGit = require('simple-git');
-const hash = Math.random() * 10e8; // A random separator ?
 
 const log = (repoDir) => {
     return new Promise((resolve, reject) => {
         var git = simpleGit(repoDir);
         git.cwd(repoDir).then(() => {
             git.log({
-                splitter: hash,
+                splitter: '‡',// I hope nobody uses it in their git log
                 format: {
                     tag: '%D',
                     note: '%N',
