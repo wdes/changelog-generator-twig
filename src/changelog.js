@@ -95,6 +95,7 @@ module.exports = {
                     links: links,
                     owner: owner,
                     repo: repo,
+                    settings: { 'twig options': { rethrow: true } },
                 },
                 (err, html) => {
                     if (err) {

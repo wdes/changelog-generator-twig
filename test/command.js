@@ -119,7 +119,7 @@ module.exports = function () {
                 }
             );
         });
-        /*test('test command custom template with error in template file', function(done) {
+        test('test command custom template with error in template file', function (done) {
             const templateFile = __dirname + '/../src/CHANGELOG_error.twig';
             exec(
                 pathBin +
@@ -131,15 +131,12 @@ module.exports = function () {
                     'HEAD' +
                     '/../CHANGELOG.twig',
                 (err, stdout, stderr) => {
-                    if (err) {
-                        done(err);
-                    } else {
-                        expect(stderr).to.contain('TwigException: errorhere function does not exist and is not defined in the context');
-                        expect(stdout).to.equal('');
-                        done();
-                    }
+                    expect(stderr).to.contain('errorhere function does not exist and is not defined in the context');
+                    expect(stderr).to.contain('src/CHANGELOG_error.twig');
+                    expect(stdout).to.equal('');
+                    done();
                 }
             );
-        });*/
+        });
     });
 };
