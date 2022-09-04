@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [v1.4.1]
+
+### Documentation
+
+- [944c09d](https://github.com/wdes/changelog/commit/944c09d5d0eb075d92e11401171c2fac549c18eb) docs: drop dependabot from README
+
+### Others
+
+- [317ded3](https://github.com/wdes/changelog/commit/317ded3a0fe9eb7e1ffd639c72114cdfe5403f5e) chore: enable twig re-throw errors method
+- [5f1a3e0](https://github.com/wdes/changelog/commit/5f1a3e07ea934c7c3a5ea2fd8b158388e48db9aa) chore: upgrade dependencies
+- [6c2d904](https://github.com/wdes/changelog/commit/6c2d9046ad0f1a987c05bafa0350e0c6d315a682) chore: update my website link URL
+- [b40fe5d](https://github.com/wdes/changelog/commit/b40fe5d4cd4a152bdac08f1a923733a16b82cb7f) chore: update the changelog
+
 ## [v1.4.0]
 
 ### Fixed
@@ -140,7 +153,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.0.0]
 
-[Unreleased]: https://github.com/wdes/changelog/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/wdes/changelog/compare/v1.4.1...HEAD
+[v1.4.1]: https://github.com/wdes/changelog/compare/v1.4.0...v1.4.1
 [v1.4.0]: https://github.com/wdes/changelog/compare/v1.3.1...v1.4.0
 [v1.3.1]: https://github.com/wdes/changelog/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/wdes/changelog/compare/v1.2.0...v1.3.0
